@@ -39,7 +39,7 @@ class Vicsek:
             positions, orientations = self.__initializeState(self.domainSize, self.numberOfParticles);
             
         if dt is None:
-            dt = 10**(-3)*(np.max(self.domainSize)/self.speed)
+            dt = 10**(-2)*(np.max(self.domainSize)/self.speed)
         
         if tmax is None:
             tmax = (10**3)*dt
