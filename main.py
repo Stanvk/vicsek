@@ -2,7 +2,7 @@ import Vicsek
 import matplotlib.pyplot as plt
 
 sim = Vicsek.Vicsek()
-time, positions, orientations = sim.simulate(tmax=10)
+time, positions, orientations = sim.simulate()
 
 plt.figure()
 
