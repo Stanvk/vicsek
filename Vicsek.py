@@ -1,4 +1,3 @@
-import random
 import numpy as np
 
 class Vicsek:
@@ -40,15 +39,21 @@ class Vicsek:
             positions, orientations = self.__initializeState(self.domainSize, self.numberOfParticles);
             
         if dt is None:
-            dt = 10**(-6)*(np.max(self.domainSize)/self.speed)
+            dt = 10**(-5)*(np.max(self.domainSize)/self.speed)
         
         if tmax is None:
-            tmax = (10**3)*dt
+            tmax = (10**4)*dt
 
         t=0
-        positionsHistory, orientationsHistory = [], []
-        while t<tmax:
-            
+        nt=int(tmax/dt+1)
+        
+        positionsHistory = np.zeros((nt,self.numberOfParticles,len(self.domainSize)))
+        orientationsHistory = np.zeros((nt,self.numberOfParticles,len(self.domainSize)))
+        
+        positionsHistory[0,:,:]=positions
+        orientationsHistory[0,:,:]=orientations
+        
+        for it in range(nt):
 
             positions += dt*(self.speed*orientations)
             positions += -self.domainSize*np.floor(positions/self.domainSize)
@@ -56,9 +61,9 @@ class Vicsek:
             orientations = self.calculateMeanOrientations(positions, orientations)
             orientations = self.__normalizeOrientations(orientations+self.generateNoise())
 
-            positionsHistory.append(positions)
-            orientationsHistory.append(orientations)
+            positionsHistory[it,:,:]=positions
+            orientationsHistory[it,:,:]=orientations
 
             t+=dt
 
-        return positionsHistory, orientationsHistory
+        return dt*np.arange(nt), positionsHistory, orientationsHistory
