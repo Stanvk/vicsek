@@ -2,7 +2,7 @@ import numpy as np
 
 class Vicsek:
 
-    def __init__(self, speed=1,radius=2, noiseAmplitude=0.1, numberOfParticles=300, domainSize=[100,100]):
+    def __init__(self, speed=1,radius=2, noiseAmplitude=0.1, numberOfParticles=300, domainSize=(100,100)):
         self.speed = speed
         self.radius = radius
         self.noiseAmplitude = noiseAmplitude
