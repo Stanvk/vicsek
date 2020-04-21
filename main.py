@@ -49,7 +49,11 @@ def save_animation(anim):
     FFwriter = animator.FFMpegWriter(fps=25, codec="h264")     
     anim.save('vicsek.mp4', writer = FFwriter )
 
-anim = animate_3D(time,positions,orientations, show=False)
+anim = animate_2D(time,positions,orientations, show=True)
+
+#animator = animator(simData, domainSize)
+#2DAnimator = animator.prepare(2Danimator())
+#2DAnimator.showPlot().showAnimation()
 
 save_animation(anim)
 
