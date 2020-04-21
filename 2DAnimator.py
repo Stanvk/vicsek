@@ -7,6 +7,7 @@ class 2DAnimator:
     _frames
 
     def __init__(self):
+        pass
 
     def prepareAnimation(self, figure, interval = 20, frames=100):
         self._figure = figure
