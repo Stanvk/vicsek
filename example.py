@@ -17,6 +17,11 @@ Prepare the animator for a 2D representation.
 preparedAnimator = animator.prepare(Animator3D.Animator3D())
 
 """
-Execute and show the animation.
+Execute and save the animation as an mp4.
 """
 preparedAnimator.saveAnimation('vicsek2.mp4')
+
+"""
+After saving the animation we can also show it directly.
+"""
+preparedAnimator.showAnimation()
