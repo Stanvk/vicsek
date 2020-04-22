@@ -4,7 +4,7 @@ import matplotlib.animation as animator
 from matplotlib.animation import FuncAnimation
 from mpl_toolkits.mplot3d import Axes3D
 
-sim = Vicsek.Vicsek(domainSize=(50,50,50), numberOfParticles=1500)
+sim = Vicsek.Vicsek(domainSize=(50,50), numberOfParticles=300)
 time, positions, orientations = sim.simulate()
 
 def animate_2D(time,positions,orientations, show=True):
@@ -49,11 +49,6 @@ def save_animation(anim):
     FFwriter = animator.FFMpegWriter(fps=25, codec="h264")     
     anim.save('vicsek.mp4', writer = FFwriter )
 
-anim = animate_2D(time,positions,orientations, show=True)
+anim = animate_2D(time,positions,orientations)
 
-#animator = animator(simData, domainSize)
-#2DAnimator = animator.prepare(2Danimator())
-#2DAnimator.showPlot().showAnimation()
-
-save_animation(anim)
-
+#save_animation(anim)

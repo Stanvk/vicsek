@@ -1,24 +1,44 @@
-import matplotlib.pyplt as plt
+import matplotlib.pyplot as plt
 
 class MatplotlibAnimator:
+"""
+The animator instance driven by Matplotlib.
+"""
+    
+    def __init__(self, simulationData, domainSize):
+        """
+        Constructor.
 
-    _simulationData = {}
-
-    _figure
-
-    _animator
-
-    def __init__(self, simulationData = {}, domainSize):
+        keyword arguments:
+        simulationData -- The simulation data array.
+        domainSize -- The tuple that represents the lenghts of the square domain in each dimension.
+        """
         self._simulationData = simulationData
         self._domainSize = domainSize
 
         self._initialize()
 
     def prepare(self, animator):
-        return animator.prepareAnimation(self._figure)
+        """
+        Prepares the appropriate animator.
+
+        keyword arguments:
+        animator -- The appropriate animator class.
+
+        return:
+        Prepared animator feeded with simulation data.
+        """
+        preparedAnimator =  animator.prepareAnimation(self._figure)
+
+        return preparedAnimator.feedSimulationData(self._simulationData, self._domainSize)
 
     def _initialize(self):
-        self._figure = plt.figure()
-        self._figure.clf();
+        """
+        Initializes matplotlib for animation.
         
-        return self.figure
+        return:
+        plt.figure()
+        """
+        self._figure = plt.figure()
+        
+        return self._figure
