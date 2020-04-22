@@ -42,7 +42,7 @@ class Animator(object):
         returns
         Animator
         """
-        animation = self._generateAnimation();
+        animation = self._getAnimation()
         FFWriter = animator.FFMpegWriter(fps=fpsVar, codec=codecVar)
         animation.save(filename, writer=FFWriter)
 
@@ -55,11 +55,13 @@ class Animator(object):
         returns
         self
         """
-        animation = self._generateAnimation();
-        
+        self._getAnimation()
         plt.show()
 
         return self
+
+    def _getAnimation(self):
+        return self.animation if 'animation' in self.__dict__ else self._generateAnimation()
 
     def _generateAnimation(self):
         """
@@ -68,8 +70,8 @@ class Animator(object):
         returns
         animation object
         """
-        self._animation = FuncAnimation(self._figure, self._animate, interval=self._interval, frames = self._frames)
+        self.animation = FuncAnimation(self._figure, self._animate, interval=self._interval, frames = self._frames)
 
-        return self._animation
+        return self.animation
 
  
