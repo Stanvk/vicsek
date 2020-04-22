@@ -19,4 +19,4 @@ preparedAnimator = animator.prepare(Animator3D.Animator3D())
 """
 Execute and show the animation.
 """
-preparedAnimator.showAnimation()
+preparedAnimator.saveAnimation('vicsek2.mp4')

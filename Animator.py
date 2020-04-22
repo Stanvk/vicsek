@@ -1,5 +1,6 @@
 from matplotlib.animation import FuncAnimation
 import matplotlib.pyplot as plt
+import matplotlib.animation as animator
 
 class Animator(object):
     
@@ -34,16 +35,41 @@ class Animator(object):
 
         return self
 
+    def saveAnimation(self, filename, fpsVar=25, codecVar="h264"):
+        """
+        Saves the animation.
+
+        returns
+        Animator
+        """
+        animation = self._generateAnimation();
+        FFWriter = animator.FFMpegWriter(fps=fpsVar, codec=codecVar)
+        animation.save(filename, writer=FFWriter)
+
+        return self
+
     def showAnimation(self):
         """
-        Executes the animation and shows it to the user.
+        Show the animation to the user.
+
+        returns
+        self
+        """
+        animation = self._generateAnimation();
+        
+        plt.show()
+
+        return self
+
+    def _generateAnimation(self):
+        """
+        Generate the animation.
         
         returns
         animation object
         """
         self._animation = FuncAnimation(self._figure, self._animate, interval=self._interval, frames = self._frames)
-        plt.show()
 
-        return self
+        return self._animation
 
  
