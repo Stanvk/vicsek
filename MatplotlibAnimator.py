@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 
 class MatplotlibAnimator:
-"""
-The animator instance driven by Matplotlib.
-"""
+    """
+    The animator instance driven by Matplotlib.
+    """
     
     def __init__(self, simulationData, domainSize):
         """

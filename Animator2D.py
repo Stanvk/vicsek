@@ -2,9 +2,9 @@ from matplotlib.animation import FuncAnimation
 import matplotlib.pyplot as plt
 
 class Animator2D:
-"""
-Animator class for 2D graphical representation.
-"""
+    """
+    Animator class for 2D graphical representation.
+    """
 
     def __init__(self):
         """
