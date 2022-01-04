@@ -1,6 +1,6 @@
 ### Vicsek model - A Python :snake: implementation!
 
-Collective motion and swarm behaviour can be studied by utilizing the Vicsek model. Here, a particle at a certain position and constant speed in
+Collective motion and swarm behaviour can be studied by utilizing the Vicsek model [1]. Here, a particle at a certain position and constant speed in
 an arbitrary direction aligns with the mean orientation of it's neighbouring particles at each time step.
 
 #### Requirements
@@ -10,3 +10,7 @@ an arbitrary direction aligns with the mean orientation of it's neighbouring par
 
 #### Getting Started
 Using the simulation is fairly simple once matplotlib and numpy are installed. The example.py file gives a example of how the simulator and animator can be used.
+
+#### References
+
+[1] Vicsek, T., Czirók, A., Ben-Jacob, E., Cohen, I., & Shochet, O. (1995). Novel type of phase transition in a system of self-driven particles. Physical review letters, 75(6), 1226.
