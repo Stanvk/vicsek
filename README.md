@@ -1,7 +1,7 @@
 ### Vicsek model - A Python :snake: implementation!
 
-Collective motion and swarm behaviour can be studied by utilizing the Vicsek model [1]. Here, an active particle at a certain position and constant speed in
-an arbitrary direction aligns with the mean orientation of it's neighbouring particles at each time step.
+Collective motion and swarm behaviour can be studied by utilising the Vicsek model [1]. Here, an active particle at a certain position and constant speed in
+an arbitrary direction aligns with the mean orientation of its neighbouring particles at each time step.
 
 #### Requirements
 - Python 3
