@@ -7,7 +7,7 @@ an arbitrary direction aligns with the mean orientation of its neighbouring part
 Besides Python3, Numpy and Matplotlib are required. The latter two can be installed by pip: ```pip install -r requirements.txt```
 
 #### Getting Started
-Using the simulation is fairly simple once matplotlib and numpy are installed. The example.py file gives a example of how the simulator and animator can be used.
+Using the simulation is fairly simple once matplotlib and numpy are installed. The example.py file gives a example of how the code can be used.
 
 #### References
 
